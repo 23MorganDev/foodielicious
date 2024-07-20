@@ -59,6 +59,10 @@ index.js: The main entry point of the application.
 .env: The environment variables file.
 package.json: The project's dependencies and scripts.
 README.md: This file, providing an overview of the project.
+
+**Development still on-going, more features will be added.
+---Saving and liking features
+---Create user accounts(DB)
 Deployment
 To deploy the application, you can use a hosting platform like Netlify, Vercel, or GitHub Pages. Make sure to build the production version of the app before deploying:
 
