@@ -1,0 +1,29 @@
+/* RecipeDetails.css */
+.container {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.text-center mb-4 {
+  color: #ff0000;
+}
+
+.img-fluid mb-4 {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.instructions {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.ingredients {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 18px;
+}
