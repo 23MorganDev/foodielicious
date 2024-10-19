@@ -1,0 +1,57 @@
+.dashboard-wrap {
+    background-image: url("../../assets/home4.jpg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+/* Dashboard Container Styling */
+.dashboard-container {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout Button Styling */
+.logout-container {
+    text-align: right;
+    margin-bottom: 20px; 
+}
+
+/* User Card Styling */
+.user-card {
+    margin-bottom: 30px; 
+}
+
+/* Right Grid Styling (Search and Recipes) */
+.right-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+/* Recipe Card Styling */
+.recipes-card {
+    margin-top: 30px; 
+}
+
+
+.user-card, .recipes-card {
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px; 
+    }
+    
+    .right-grid {
+        gap: 20px; 
+    }
+}

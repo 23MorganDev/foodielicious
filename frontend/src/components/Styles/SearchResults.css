@@ -1,0 +1,117 @@
+.container {
+    background-color: rgba(255, 245, 238, 0.9); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  /* Heading Styling */
+  h1 {
+    color: #FF4500; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Recipe Card Styling */
+  .recipe-card {
+    border: 2px solid #FF4500; 
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .recipe-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .recipe-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Card Title Styling */
+  .recipe-card .card-title {
+    color: #FF4500; 
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* No Recipes Found Text */
+  p {
+    font-size: 16px;
+    color: #FF4500; 
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Link Styling */
+  .recipe-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .recipe-link:hover {
+    text-decoration: none; 
+  }
+  
+  /* Responsive Design */
+  
+  /* Medium Devices (Tablets) */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .recipe-card {
+      margin-bottom: 20px;
+    }
+  
+    h1 {
+      font-size: 24px; 
+    }
+  
+    .recipe-card .card-title {
+      font-size: 16px; 
+    }
+  }
+  
+  /* Small Devices (Phones) */
+  @media (max-width: 576px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .recipe-card {
+      margin-bottom: 15px;
+    }
+  
+    h1 {
+      font-size: 20px; 
+    }
+  
+    .recipe-card .card-title {
+      font-size: 14px; 
+    }
+  }
+  
+  /* Extra Small Devices (e.g. 320px width) */
+  @media (max-width: 320px) {
+    .container {
+      padding: 8px; 
+    }
+  
+    .recipe-card {
+      margin-bottom: 10px;
+    }
+  
+    h1 {
+      font-size: 18px; 
+    }
+  
+    .recipe-card .card-title {
+      font-size: 12px; 
+    }
+  }
+  

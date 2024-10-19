@@ -1,0 +1,134 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-container {
+    background-color: #FFF5EE; 
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .login-box {
+    background-color: #FFFFFF; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .login-title {
+    font-size: 2rem;
+    color: #FF4500; 
+  }
+  
+  .custom-label {
+    font-weight: 500;
+    color: #4F4F4F; 
+  }
+  
+  .form-control {
+    border: 1px solid #FFA07A; 
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #4F4F4F; 
+  }
+  
+  .form-control:focus {
+    border-color: #FF6347; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5); 
+  }
+  
+  /* Login button */
+  .login-btn {
+    background-color: #FF4500; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .login-btn:hover {
+    background-color: #FF6347;
+    cursor: pointer;
+  }
+  
+  /* Error message styling */
+  .text-danger {
+    color: #FF6347; 
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Link Styling */
+  .custom-link {
+    color: #FF4500; 
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    color: #FF6347; 
+  }
+  
+  /* Responsive Styling */
+  
+  /* General mobile responsiveness */
+  @media (max-width: 768px) {
+    .login-box {
+      padding: 20px;
+    }
+    .login-title {
+      font-size: 1.8rem;
+    }
+    .form-control {
+      font-size: 0.95rem;
+      padding: 8px;
+    }
+    .login-btn {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small screen responsiveness */
+  @media (max-width: 576px) {
+    .login-title {
+      font-size: 1.5rem;
+    }
+    .login-box {
+      width: 100%;
+      padding: 15px;
+    }
+    .form-control {
+      font-size: 0.9rem;
+    }
+    .login-btn {
+      font-size: 0.95rem;
+      padding: 8px;
+    }
+  }
+  
+  /* Extra small screens (like 320x570) */
+  @media (max-width: 320px) {
+    .login-title {
+      font-size: 1.3rem;
+    }
+    .form-control {
+      font-size: 0.85rem;
+    }
+    .login-btn {
+      font-size: 0.9rem;
+    }
+  }
+  
