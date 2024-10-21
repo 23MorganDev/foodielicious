@@ -1,12 +1,12 @@
 const configPath = {
-  BACKEND_BASE_URL: "http://localhost:5000/backend",
+  BACKEND_BASE_URL: "https://foodie-backend-2mh8.onrender.com",
   ENDPOINTS: {
     REGISTER:"/register",
     LOGIN: "/login",
     ME: "/me",
     ADDRECIPE: "/recipes/add",
     RECIPEDETAIL: (id) =>  `/recipes/${id}`,
-    IMAGE: (image) => `http://localhost:5000/${image}`
+    IMAGE: (image) => `https://foodie-backend-2mh8.onrender.com/${image}`
   },
 };
 
