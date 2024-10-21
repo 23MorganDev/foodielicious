@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { RECIPE_URL, RECIPE_API_KEY } from "../../constants/constant";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../components/Styles/Search.css"
@@ -7,6 +6,11 @@ import "../../components/Styles/Search.css"
 const Search = () => {
   const inputRef = useRef(null);
   const navigate = useNavigate();
+
+      // Accessing environment variables
+    const RECIPE_URL = import.meta.env.VITE_API_URL;
+    const RECIPE_API_KEY = import.meta.env.VITE_API_KEY;
+
 
   const handleSearch = async () => {
     const name = inputRef.current.value;
