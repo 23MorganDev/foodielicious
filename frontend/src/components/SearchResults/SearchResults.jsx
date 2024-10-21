@@ -1,12 +1,16 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import { RECIPE_URL, RECIPE_API_KEY } from "../../constants/constant";
 import "../../components/Styles/SearchResults.css";
 
 const SearchResults = () => {
   const location = useLocation();
   const { recipes, term } = location.state || { recipes: [], term: "" };
+
+      // Accessing environment variables
+    const RECIPE_URL = import.meta.env.VITE_API_URL;
+    const RECIPE_API_KEY = import.meta.env.VITE_API_KEY;
+
 
   const handleRecipeClick = async (id) => {
     try {
