@@ -20,7 +20,7 @@ const Register = () => {
     }
     try {
       const response = await fetch(
-        `${configPath.BACKEND_BASE_URL}/users${configPath.ENDPOINTS.REGISTER}`,
+        configPath.ENDPOINTS.REGISTER,
         {
           method: "POST",
           headers: {

@@ -12,6 +12,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
@@ -33,7 +34,6 @@
     "vite": "^5.0.8"
   },
   "engines": {
-  "node": ">=16.x"
-}
-
+    "node": ">=16.x"
+  }
 }

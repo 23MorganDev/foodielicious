@@ -43,8 +43,7 @@ const AddRecipe = () => {
     images.forEach((image) => formData.append("images", image));
 
     try {
-      const response = await fetch(
-        `${configPath.BACKEND_BASE_URL}${configPath.ENDPOINTS.ADDRECIPE}`,
+      const response = await fetch(configPath.ENDPOINTS.ADDRECIPE,
         {
           method: "POST",
           headers: {

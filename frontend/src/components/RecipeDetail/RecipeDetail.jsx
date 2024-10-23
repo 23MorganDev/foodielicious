@@ -15,7 +15,7 @@ const RecipeDetail = () => {
     if (!recipe) {
       const fetchRecipe = async () => {
         try {
-          const recipeUrl = `${configPath.BACKEND_BASE_URL}${configPath.ENDPOINTS.RECIPEDETAIL(id)}`;
+          const recipeUrl = configPath.ENDPOINTS.RECIPEDETAIL(id);
           const token = localStorage.getItem("token");
 
           const response = await fetch(recipeUrl, {
@@ -62,14 +62,18 @@ const RecipeDetail = () => {
 
         {recipe ? (
           <Card className="recipe-card shadow-lg">
-            {recipe.images && recipe.images.length > 0 && (
-              <Card.Img
-                variant="top"
-                src={configPath.ENDPOINTS.IMAGE(recipe.images[0])}
-                alt={`${recipe.title} image`}
-                className="recipe-image"
-              />
+            {recipe && recipe.images && recipe.images.length > 0 && (
+              <>
+                <Card.Img
+                  variant="top"
+                  src={configPath.ENDPOINTS.IMAGE(recipe.images[0])}
+                  alt={`${recipe.title} image`}
+                  className="recipe-image"
+                />
+              </>
             )}
+
+
             <Card.Body>
               <Card.Title className="recipe-title text-center mb-4">
                 Recipe Preparation

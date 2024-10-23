@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import configPath from "../Paths/configPaths";
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../../components/Styles/Login.css'; 
+import '../../components/Styles/Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${configPath.BACKEND_BASE_URL}/users${configPath.ENDPOINTS.LOGIN}`,
+        configPath.ENDPOINTS.LOGIN,
         {
           method: "POST",
           headers: {
@@ -32,6 +32,7 @@ const Login = () => {
       }
 
       const data = await response.json();
+
       localStorage.setItem("token", data.token);
       console.log("Login successful");
       navigate("/dashboard");

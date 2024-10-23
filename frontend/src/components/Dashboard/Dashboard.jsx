@@ -14,7 +14,7 @@ const Dashboard = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`${configPath.BACKEND_BASE_URL}/users${configPath.ENDPOINTS.ME}`, {
+        const response = await fetch(configPath.ENDPOINTS.ME, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
