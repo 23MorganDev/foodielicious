@@ -9,20 +9,19 @@ connectDB().catch((err) => {
   process.exit(1);
 });
 
-// Configure CORS options
+// Exact URLs for CORS configuration
 const corsOptions = {
   origin: [
-    'https://foodie-6ykt.onrender.com',  //frontend URL
-    'http://localhost:5173'  // Local development frontend URL
+    'https://foodie-vml0.onrender.com',  
+    'http://localhost:5173'  
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
 
-
-
-// Initialize middleware
 app.use(cors(corsOptions));
+
+// Initialize other middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use("/uploads", express.static("uploads"));
@@ -36,6 +35,7 @@ app.use("/backend/users", users);
 app.use("/backend/recipes", recipes);
 app.use("/backend/ratings", ratings);
 
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
