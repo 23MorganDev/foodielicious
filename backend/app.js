@@ -9,12 +9,25 @@ connectDB().catch((err) => {
   process.exit(1);
 });
 
-// Configure CORS options
+// Configure CORS options for fallback
 const corsOptions = {
-  origin: 'https://foodie-6ykt.onrender.com', //frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-  credentials: true, 
+  origin: 'https://foodie-6ykt.onrender.com', // frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 };
+
+// Initialize CORS with options as middleware
+app.use(cors(corsOptions));
+
+// Set custom headers for more precise control over CORS
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://foodie-6ykt.onrender.com");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Content-Type-Options, Accept, X-Requested-With, Origin, Access-Control-Request-Method, Access-Control-Request-Headers");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "7200"); // Cache the preflight response for 2 hours
+  next();
+});
 
 // Initialize middleware
 app.use(cors(corsOptions)); 
