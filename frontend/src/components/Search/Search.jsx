@@ -11,17 +11,25 @@ const Search = () => {
   const RECIPE_URL = import.meta.env.VITE_API_URL;
   const RECIPE_API_KEY = import.meta.env.VITE_API_KEY;
 
-
-
   const handleSearch = async () => {
     const name = inputRef.current.value;
     try {
       const fetchResponse = await fetch(
         `${RECIPE_URL}/complexSearch?apiKey=${RECIPE_API_KEY}&query=${name}`
       );
+      // Debugging: Log the URL being fetched
+      console.log(`Fetching URL: ${RECIPE_URL}/complexSearch?apiKey=${RECIPE_API_KEY}&query=${name}`);
 
+      // Check the response content type
+      const contentType = fetchResponse.headers.get("content-type");
+      if (contentType && contentType.includes("text/html")) {
+        console.error("Received HTML response instead of JSON.");
+      }
+
+      // Check if the fetch was successful
       if (!fetchResponse.ok) {
-        throw new Error(`Error fetching from recipe API`);
+        console.error(`HTTP error! status: ${fetchResponse.status}`);
+        throw new Error(`Error fetching from recipe API: ${fetchResponse.status}`);
       }
 
       const recipeInfo = await fetchResponse.json();
