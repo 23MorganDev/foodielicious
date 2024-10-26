@@ -12,7 +12,7 @@ connectDB().catch((err) => {
 // Exact URLs for CORS configuration
 const corsOptions = {
   origin: [
-    'https://foodie-vml0.onrender.com',  
+    'https://foodie-zwzi.onrender.com',  
     'http://localhost:5173'  
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
