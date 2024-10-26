@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
 const cors = require("cors");
+
 const app = express();
 
 // Connect to the database
@@ -9,28 +10,34 @@ connectDB().catch((err) => {
   process.exit(1);
 });
 
-// Exact URLs for CORS configuration
+// CORS configuration
 const corsOptions = {
-  origin: [
-    'https://foodie-zwzi.onrender.com',  
-    'http://localhost:5173'  
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  origin: 'https://foodie-zwzi.onrender.com', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+  credentials: true, 
 };
 
+// CORS middleware
 app.use(cors(corsOptions));
 
-// Initialize other middleware
+// Middleware to cache preflight requests
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Max-Age', '86400'); 
+  next();
+});
+
+// Initialize other middlewares
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use("/uploads", express.static("uploads"));
 
-// Routes
+// Import routes
 const users = require("./routes/users");
 const recipes = require("./routes/recipes");
 const ratings = require("./routes/ratings");
 
+// Use routes
 app.use("/backend/users", users);
 app.use("/backend/recipes", recipes);
 app.use("/backend/ratings", ratings);
